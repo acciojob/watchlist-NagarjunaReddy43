@@ -24,7 +24,7 @@ public class MovieController {
     }
 
     @PutMapping("/add-movie-director-pair")
-    public ResponseEntity<String> addMovieDirector(@RequestParam("moviename") String moviename,@RequestParam("directorName") String directorName){
+    public ResponseEntity<String> addMovieDirectorPair(@RequestParam("moviename") String moviename,@RequestParam("directorName") String directorName){
         return new ResponseEntity<>(movieService.addMovieDirectorPair(moviename,directorName),HttpStatus.CREATED);
     }
     @GetMapping("/get-movie-by-name/{name}")
