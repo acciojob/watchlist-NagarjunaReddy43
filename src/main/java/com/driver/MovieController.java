@@ -29,7 +29,7 @@ public class MovieController {
     }
     @GetMapping("/get-movie-by-name/{name}")
     public ResponseEntity getMovieByName(@RequestParam("name") String moviename){
-        return new ResponseEntity<>(movieService.getMovieByname(moviename),HttpStatus.FOUND);
+        return new ResponseEntity<>(movieService.getMovieByName(moviename),HttpStatus.FOUND);
     }
     @GetMapping("/get-director-by-name/{name}")
     public ResponseEntity getDirectorByName(@PathVariable("name") String name){

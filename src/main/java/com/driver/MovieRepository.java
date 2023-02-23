@@ -54,10 +54,12 @@ public class MovieRepository {
         return "Movie-Director Pair Is Added Successfully";
     }
 
-    public Movie getMovieByname(String movieName){
+    public Movie getMovieByName(String movieName){
+        if(!movieMap.containsKey(movieName)) return null;
         return movieMap.get(movieName);
     }
     public Director getDirectorByName(String directorName){
+        if(!directorMap.containsKey(directorName)) return null;
         return directorMap.get(directorName);
     }
 
