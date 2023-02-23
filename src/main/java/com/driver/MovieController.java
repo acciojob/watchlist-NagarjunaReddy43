@@ -19,8 +19,8 @@ public class MovieController {
         return new ResponseEntity<>(movieService.addMovie(movie),HttpStatus.CREATED);
     }
     @PostMapping("/add-director")
-    public ResponseEntity addDirector(@RequestBody Director director){
-        return new ResponseEntity<>(movieService.addDirector(director),HttpStatus.CREATED);
+    public ResponseEntity addDirector(@RequestBody Director movie){
+        return new ResponseEntity<>(movieService.addDirector(movie),HttpStatus.CREATED);
     }
 
     @PutMapping("/add-movie-director-pair")
@@ -35,9 +35,9 @@ public class MovieController {
     public ResponseEntity getDirectorByName(@PathVariable("name") String name){
         return new ResponseEntity<>(movieService.getDirectorByName(name),HttpStatus.FOUND);
     }
-    @GetMapping("/get-movies-by-director-name")
-    public ResponseEntity getListofMoviesByDirectorName(@PathVariable("director") String director){
-        return new ResponseEntity<>(movieService.getListofMoviesByDirectorName(director),HttpStatus.FOUND);
+    @GetMapping("/get-movies-by-director-name/{director}")
+    public ResponseEntity getMoviesByDirectorName(@PathVariable("director") String director){
+        return new ResponseEntity<>(movieService.getMoviesByDirectorName(director),HttpStatus.FOUND);
     }
     @GetMapping("/get-all-movies")
     public ResponseEntity findAllMovies(){

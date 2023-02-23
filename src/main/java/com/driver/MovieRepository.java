@@ -63,7 +63,7 @@ public class MovieRepository {
         return directorMap.get(directorName);
     }
 
-    public List<String> getListofMoviesByDirectorName(String directorName){
+    public List<String> getMoviesByDirectorName(String directorName){
         return movie_director_map.get(directorName);
     }
     public List<String> findAllMovies(){
